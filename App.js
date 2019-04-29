@@ -1,197 +1,39 @@
 import React, { Component } from 'react'
-import { AppRegistry, ScrollView, Image, Text } from 'react-native'
+import { AppRegistry, FlatList, StyleSheet, Text, View } from 'react-native'
 
-export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
+export default class FlatListBasics extends Component {
   render() {
     return (
-      <ScrollView>
-        <Text style={{ fontSize: 96 }}>Scroll me plz</Text>
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
+      <View style={styles.container}>
+        <FlatList
+          data={[
+            { key: 'Muhammad' },
+            { key: 'Nando' },
+            { key: 'Hidayat' },
+            { key: 'Laksita' },
+            { key: 'Kusuma' },
+            { key: 'Wardhani' },
+            { key: 'Raissa' },
+            { key: 'Almira' },
+            { key: 'Rachmayanti' }
+          ]}
+          renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
         />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Text style={{ fontSize: 96 }}>If you like</Text>
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Text style={{ fontSize: 96 }}>Scrolling down</Text>
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Text style={{ fontSize: 96 }}>What's the best</Text>
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Text style={{ fontSize: 96 }}>Framework around?</Text>
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Image
-          source={{
-            uri: 'https://facebook.github.io/react-native/img/favicon.png',
-            width: 64,
-            height: 64
-          }}
-        />
-        <Text style={{ fontSize: 80 }}>React Native</Text>
-      </ScrollView>
+      </View>
     )
   }
 }
 
-AppRegistry.registerComponent(
-  'AwesomeProject',
-  () => IScrolledDownAndWhatHappenedNextShockedMe
-)
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 22
+  },
+  item: {
+    paddingTop: 10,
+    fontSize: 18,
+    height: 44
+  }
+})
+
+AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics)
